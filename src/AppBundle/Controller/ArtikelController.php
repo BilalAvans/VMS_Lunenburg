@@ -1,5 +1,4 @@
 <?php
-
 namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -22,7 +21,6 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
         //$this->getDoctrine()->getRepository('AppBundle:Klant')->findAll();
-    }
 
     /**
     * @Route("/artikel/bestand", name="artikelbestand")
@@ -43,4 +41,3 @@ class DefaultController extends Controller
     }
 
 }
-
