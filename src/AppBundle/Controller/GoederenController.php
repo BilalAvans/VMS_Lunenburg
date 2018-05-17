@@ -1,5 +1,4 @@
 <?php
-
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -11,8 +10,8 @@ use AppBundle\Form\Type\OntvangenGoederenType;
 
 class GoederenController extends Controller{
     /**
-    * @Route("/ontvangengoederen/nieuw", name="ontvangengoederennieuw")
-    */
+     * @Route("/ontvangengoederen/nieuw", name="ontvangengoederennieuw")
+     */
     public function nieuweOntvangenGoederen(Request $request) {
         $nieuweOntvangenGoederen = new OntvangenGoederen();
         $form = $this->createForm(OntvangenGoederenType::class, $nieuweOntvangenGoederen);
@@ -27,7 +26,7 @@ class GoederenController extends Controller{
         return new Response($this->render('form.html.twig', array ('form' => $form->createView())));
     }
 
-            /**
+    /**
      * @Route("/ontvangengoederen/wijzig/{ontvangstnummer}", name="goederenwijzigen")
      */
     public function wijzigOntvangenGoederen(Request $request, $ontvangstnummer) {
@@ -44,7 +43,7 @@ class GoederenController extends Controller{
     return new Response($this->render('form.html.twig', array('form' => $form->createView())));
 }
 
-                /**
+    /**
      * @Route("/ontvangengoederen/verwijder/{ontvangstnummer}", name="goederenverwijdering")
      */
     public function verwijderOntvangenGoederen(Request $request, $ontvangstnummer) {
@@ -60,17 +59,17 @@ class GoederenController extends Controller{
 
 
 
-        /**
-    * @Route("/ontvangengoederen/alle", name="alleGoederen")
-    */
+    /**
+     * @Route("/ontvangengoederen/alle", name="alleGoederen")
+     */
     public function alleGoederen(request $request) {
         $ontvangengoederen = $this->getDoctrine()->getRepository("AppBundle:OntvangenGoederen")->findAll();
         return new Response($this->render('ontvangengoederen.html.twig', array('goederen' => $ontvangengoederen)));
     }
 
-           /**
-    * @Route("/ontvangengoederen/alle/{ontvangen}", name="alleOntvangenGoederen")
-    */
+    /**
+     * @Route("/ontvangengoederen/alle/{ontvangen}", name="alleOntvangenGoederen")
+     */
     public function alleOntvangenGoederen(request $request, $ontvangen) {
         $alontvangengoederen = $this->getDoctrine()->getRepository("AppBundle:OntvangenGoederen")->findByOntvangen($ontvangen);
         return new Response($this->render('ontvangengoederen.html.twig', array('goederen' => $alontvangengoederen)));
