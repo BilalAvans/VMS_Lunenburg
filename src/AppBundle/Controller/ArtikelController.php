@@ -8,20 +8,8 @@ use AppBundle\Entity\Artikel;
 use AppBundle\Form\Type\ArtikelType;
 
 
-
-class DefaultController extends Controller
+class ArtikelController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
-    public function indexAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-        ]);
-        //$this->getDoctrine()->getRepository('AppBundle:Klant')->findAll();
-
     /**
     * @Route("/artikel/bestand", name="artikelbestand")
     */

@@ -23,24 +23,5 @@ class DefaultController extends Controller
         ]);
         //$this->getDoctrine()->getRepository('AppBundle:Klant')->findAll();
     }
-
-    /**
-    * @Route("/artikel/bestand", name="artikelbestand")
-    */
-    public function nieuwArtikelBestand(Request $request) {
-        $nieuwArtikelBestand = new Artikel();
-        $form = $this->createForm(ArtikelType::class, $nieuwArtikelBestand);
-
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($nieuwArtikelBestand);
-            $em->flush();
-            return $this->redirect($this->generateurl("artikelbestand"));
-        }
-
-        return new Response($this->render('form.html.twig', array('form' => $form->createView())));
-    }
-
 }
 
