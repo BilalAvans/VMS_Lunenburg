@@ -57,21 +57,19 @@ class OntvangenGoederen
     private $leverancier;
 
     /**
-    * @var string
-    *
-    * @ORM\Column(name="ontvangen", type="string", length=100)
-    */
-
+     * @var string
+     *
+     * @ORM\Column(name="ontvangen", type="string", length=100)
+     */
     private $ontvangen;
 
     /**
-    * @var int
-    *
+     * @var int
+     *
      * @ORM\Column(name="ontvangstnummer", type="integer", unique=true)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-
     private $ontvangstnummer;
 
 
