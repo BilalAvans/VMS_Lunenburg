@@ -8,7 +8,6 @@ use AppBundle\Entity\Artikel;
 use AppBundle\Form\Type\ArtikelType;
 
 
-
 class ArtikelController extends Controller
 {
     /**
