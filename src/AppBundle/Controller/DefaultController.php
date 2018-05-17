@@ -19,13 +19,4 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
     }
-
-    /**
-     * @Route("/hallo", name="hallo")
-     */
-    public function indexAction(Request $request)
-    {
-        // replace this example code with whatever you need
-        return new Response("hallo");
-    }
 }
