@@ -1,4 +1,5 @@
 <?php
+
 namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -23,3 +24,4 @@ class DefaultController extends Controller
         //$this->getDoctrine()->getRepository('AppBundle:Klant')->findAll();
     }
 }
+
